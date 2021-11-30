@@ -24,22 +24,23 @@ function App() {
     setCategoryCount(Items);
   };
 
-  const getCategory = async () => {
-    const response = await axios
-      .get(
-        `https://fakestoreapi.com/products/category/${category}` //Retrives category products
-      )
-      .catch((err) => console.log(err));
-    setProducts(response.data);
-  };
-
   useEffect(() => {
     getProducts();
   }, []);
 
   useEffect(() => {
     if (category === '') getProducts();
-    else getCategory();
+    else {
+      const getCategory = async () => {
+        const response = await axios
+          .get(
+            `https://fakestoreapi.com/products/category/${category}` //Retrives category products
+          )
+          .catch((err) => console.log(err));
+        setProducts(response.data);
+      };
+      getCategory();
+    }
   }, [category]);
 
   return (
