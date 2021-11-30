@@ -1,0 +1,32 @@
+:root {
+  --color-dark-blue: #14279b;
+  --color-light-blue: #5c7aea;
+  --color-grey-blue: #3d56b2;
+  --color-grey: #e6e6e6;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$default-font: 'Poppins', sans-serif;
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1rem = 10px
+}
+
+body {
+  font-family: $default-font;
+  font-weight: 300;
+}

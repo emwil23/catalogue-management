@@ -1,3 +1,5 @@
+import './Components/sass/main.scss'; //Stylesheet SASS
+
 import React from 'react';
 import ReactDom from 'react-dom';
 
