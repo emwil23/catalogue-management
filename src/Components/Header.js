@@ -24,7 +24,7 @@ function Header({ setCategory, setSearch }) {
             options={options}
             onChange={(e) => handleDrop(e)}
             value={''}
-            placeholder='Select Category'
+            placeholder='Category'
           />
         </div>
         <div className='header__content-search'>

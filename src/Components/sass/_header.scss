@@ -18,15 +18,17 @@
     justify-content: space-between;
     &-dropdown {
       margin-right: 2rem;
-      padding: 1rem 1rem;
+      padding: 1.5rem 1rem;
     }
     &-search {
-      padding: 1rem 1rem;
+      padding: 1rem;
       flex-grow: 1;
       &--item {
         width: 100%;
-        padding: 0.5rem 0.5rem;
-        border-radius: 1rem;
+        padding: 1rem 1rem;
+        border-radius: 0.5rem;
+        outline: none;
+        font-style: inherit;
       }
     }
   }

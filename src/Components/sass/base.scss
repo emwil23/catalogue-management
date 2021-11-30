@@ -12,6 +12,12 @@
   margin: 0;
   padding: 0;
 }
+//Screen Sizes
+$bp-largest: 75em; //1200px / 16px : 75em
+$bp-large: 68.75em; //1100px / 16px : 68.75em
+$bp-medium: 56.25em; //900px / 16px : 56.25em
+$bp-small: 26.56em; //425px / 16px : 26.56em
+$bp-smallest: 22.31em; //357px / 16px : 22.31em
 
 $default-font: 'Poppins', sans-serif;
 
@@ -24,6 +30,10 @@ $default-font: 'Poppins', sans-serif;
 html {
   box-sizing: border-box;
   font-size: 62.5%; //1rem = 10px
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
 }
 
 body {

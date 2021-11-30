@@ -14,5 +14,59 @@
     align-items: center;
   }
   &__content {
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    height: 80%;
+    width: 50%;
+    padding: 2rem 2rem;
+    text-align: center;
+    position: relative;
+    border-radius: 1rem;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 80%;
+      height: 60%;
+    }
+
+    &-header {
+      &--title {
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+
+      &--close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 2rem;
+
+        &-btn {
+          border: none;
+          font-weight: 700;
+          font-size: 1.6rem;
+
+          background-color: transparent;
+          cursor: pointer;
+
+          transition: all 0.3s;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+
+    &-chart {
+      flex-grow: 1;
+      @media only screen and (max-width: $bp-small) {
+        height: inherit;
+      }
+    }
   }
+}
+
+#chart {
 }
