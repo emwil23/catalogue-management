@@ -6,11 +6,12 @@ import Header from './Header';
 import Products from './Products';
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState('');
-  const [search, setSearch] = useState('');
-  const [categoryCount, setCategoryCount] = useState([]);
+  const [products, setProducts] = useState([]); //TRACKS THE PRODUCT LIST
+  const [category, setCategory] = useState(''); //GETS THE PRODUCT CATEGORY FROM HEADER
+  const [search, setSearch] = useState(''); //KEEP TRACKS OF THE SEARCH TERM AND PASSES IT TO PRODUCTS FOR FILTER
+  const [categoryCount, setCategoryCount] = useState([]); //TRACKS THE NO. OF PRODUCTS IN A CATEGORY
 
+  //GET ALL THE PRODUCTS
   const getProducts = async () => {
     const response = await axios
       .get('https://fakestoreapi.com/products')
@@ -24,10 +25,12 @@ function App() {
     setCategoryCount(Items);
   };
 
+  //FETCH ALL THE PRODUCTS WHEN THE APP STARTS
   useEffect(() => {
     getProducts();
   }, []);
 
+  //GET THE PRODUCTS WHEN THE CATEGORY CHANGES
   useEffect(() => {
     if (category === '') getProducts();
     else {
