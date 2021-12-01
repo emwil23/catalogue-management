@@ -5,10 +5,11 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
 const options = [
-  'electronics',
-  'jewelery',
-  "men's clothing",
-  "women's clothing",
+  { value: 'electronics', label: 'Electronics' },
+  { value: 'jewelery', label: 'Jewelery' },
+  { value: "men's clothing", label: "Men's clothing" },
+  { value: "women's clothing", label: "women's clothing" },
+  { value: '', label: 'All Products' },
 ];
 
 function Header({ setCategory, setSearch }) {

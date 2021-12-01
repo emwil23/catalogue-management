@@ -33,7 +33,7 @@ function App() {
   //GET THE PRODUCTS WHEN THE CATEGORY CHANGES
   useEffect(() => {
     if (category === '') getProducts();
-    else {
+    else if (search === '' && category !== '') {
       const getCategory = async () => {
         const response = await axios
           .get(
@@ -44,19 +44,39 @@ function App() {
       };
       getCategory();
     }
-  }, [category]);
+  }, [category, search]);
 
+  useEffect(() => {
+    if (search === '') return;
+    getProducts();
+  }, [search]);
+
+  console.log(search);
   return (
     <div>
       <Header
         setCategory={(value) => setCategory(value)}
         setSearch={(value) => setSearch(value)}
       />
-      <Products
-        productsList={products}
-        searchProducts={search}
-        categoryCount={categoryCount}
-      />
+      {search === '' && category === '' ? (
+        <Products
+          productsList={products}
+          searchProducts={''}
+          categoryCount={categoryCount}
+        />
+      ) : search === '' && category !== '' ? (
+        <Products
+          productsList={products}
+          searchProducts={''}
+          categoryCount={categoryCount}
+        />
+      ) : (
+        <Products
+          productsList={products}
+          searchProducts={search}
+          categoryCount={categoryCount}
+        />
+      )}
     </div>
   );
 }
